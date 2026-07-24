@@ -1,11 +1,11 @@
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:8
 
-ARG RELEASE=2.32.0
+ARG RELEASE=2.44.0
 ARG ALLURE_REPO=https://storage.yandexcloud.net/stepik-files/maven2/io/qameta/allure/allure-commandline
 
 RUN echo $RELEASE && \
     yum -y update && \
-    yum -y install tar wget gzip && \
+    yum -y install tar wget gzip findutils && \
     rm -rf /var/cache/yum/*
 
 RUN wget --no-verbose -O /tmp/allure-$RELEASE.tgz $ALLURE_REPO/$RELEASE/allure-commandline-$RELEASE.tgz && \
