@@ -1,7 +1,7 @@
 FROM public.ecr.aws/amazoncorretto/amazoncorretto:8
 
 ARG RELEASE=2.44.0
-ARG ALLURE_REPO=https://storage.yandexcloud.net/stepik-files/maven2/io/qameta/allure/allure-commandline
+ARG ALLURE_REPO=https://s3.ru-msk.k2.cloud/stepik-files/maven2/io/qameta/allure/allure-commandline
 
 RUN echo $RELEASE && \
     yum -y update && \
